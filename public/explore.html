@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PathFinder - Explore Skills & Culture</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="home.html">
+          <img src="images/logo.png" width="50px" alt="Logo" />
+          <h1>PathFinder</h1>
+        </a>
+      </div>
+      <div class="nav_links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a class="nav_links_items" href="index.html">Home</a></li>
+          <li><a class="nav_links_items" href="about.html">About</a></li>
+          <li><a class="nav_links_items" href="explore.html">Explore</a></li>
+          <li><a class="nav_links_items" href="contact.html">Contact</a></li>
+          <li><a class="login_btn" href="login_form.html">Log In</a></li>
+          <li><a class="register_btn" href="register_form.html">Sign Up</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </header>
+
+  <section class="explore_hero">
+    <div class="container">
+      <h1>Explore Skills, Opportunities & Culture</h1>
+      <p>Discover talented youth, authentic experiences, and local cultural treasures. Join PathFinder today and unlock your potential!</p>
+      <div class="counters">
+        <div class="counter">
+          <h2 class="count" data-target="1000">0</h2>
+          <p>Youth Connected</p>
+        </div>
+        <div class="counter">
+          <h2 class="count" data-target="500">0</h2>
+          <p>Employers Hiring</p>
+        </div>
+        <div class="counter">
+          <h2 class="count" data-target="300">0</h2>
+          <p>Cultural Experiences</p>
+        </div>
+      </div>
+      <a href="register_form.html" class="hero_button">Join Now</a>
+    </div>
+  </section>
+
+  <!-- Filterable Skills Section -->
+  <section class="explore_skills">
+    <div class="container">
+      <h2>Discover Opportunities & Skills</h2>
+      <div class="filters">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="youth">Youth</button>
+        <button class="filter-btn" data-filter="employers">Employers</button>
+        <button class="filter-btn" data-filter="tourists">Tourists</button>
+        <button class="filter-btn" data-filter="culture">Culture</button>
+      </div>
+      <div class="skills_grid">
+        <div class="skill_card youth">
+          <img src="images/cooking.jpg" alt="Cooking">
+          <h3>Cooking Skills</h3>
+          <p>Showcase your culinary talents and get noticed by top employers.</p>
+        </div>
+        <div class="skill_card youth">
+          <img src="images/music.jpg" alt="Music">
+          <h3>Music & Performance</h3>
+          <p>Share your musical talents and connect with cultural projects.</p>
+        </div>
+        <div class="skill_card employers">
+          <img src="images/job_meeting.jpg" alt="Employers">
+          <h3>Recruitment Opportunities</h3>
+          <p>Employers can find the perfect talent for their hospitality business.</p>
+        </div>
+        <div class="skill_card tourists">
+          <img src="images/guiding.jpg" alt="Guiding">
+          <h3>Tourist Guiding</h3>
+          <p>Connect with authentic local guides for immersive experiences.</p>
+        </div>
+        <div class="skill_card culture">
+          <img src="images/crafts.jpg" alt="Crafts">
+          <h3>Traditional Crafts</h3>
+          <p>Preserve and showcase cultural heritage through handmade crafts.</p>
+        </div>
+        <div class="skill_card youth">
+          <img src="images/mentorship.jpg" alt="Mentorship">
+          <h3>Mentorship Programs</h3>
+          <p>Get guided by industry experts and grow your career.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="explore_how">
+    <div class="container">
+      <h2>How PathFinder Works</h2>
+      <div class="steps">
+        <div class="step">
+          <i class="fas fa-clipboard-check"></i>
+          <h3>Step 1</h3>
+          <p>Take a simple skills & interest test to reveal your strengths.</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-brain"></i>
+          <h3>Step 2</h3>
+          <p>Our AI analyzes your profile to match you with the best opportunities.</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-handshake"></i>
+          <h3>Step 3</h3>
+          <p>Get matched with employers, projects, or cultural experiences.</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-award"></i>
+          <h3>Step 4</h3>
+          <p>Apply, build your portfolio, and grow your skills to unlock your potential.</p>
+        </div>
+      </div>
+      <a href="register_form.html" class="hero_button">Get Started Now</a>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="explore_testimonials">
+    <div class="container">
+      <h2>Success Stories</h2>
+      <div class="testimonial_grid">
+        <div class="testimonial">
+          <p>"Thanks to PathFinder, I found a hospitality job near my hometown. I never imagined my skills would be valued like this!"</p>
+          <h4>- Raphahlelo Ditsietsi, Youth Participant</h4>
+        </div>
+        <div class="testimonial">
+          <p>"We hired three amazing employees through PathFinder. The platform made recruitment so easy and effective."</p>
+          <h4>- Mrs. Brooke, Hotel Owner</h4>
+        </div>
+        <div class="testimonial">
+          <p>"Our tourists had an unforgettable cultural experience. PathFinder connects us to real talent and traditions."</p>
+          <h4>- Tourism Guide, South Africa</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call-to-Action -->
+  <section class="explore_cta">
+    <div class="container">
+      <h2>Ready to join PathFinder?</h2>
+      <p>Create your profile today and start exploring endless opportunities, cultural experiences, and mentorship programs.</p>
+      <a href="register_form.html" class="hero_button">Sign Up Now</a>
+    </div>
+  </section>
+
+ <footer>
+    <p>&copy; 2025 PathFinder | Join us in building opportunities & preserving culture. <i class="fa fa-heart" style="color:red;"></i></p>
+  </footer>
+
+<script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){ navLinks.style.right = "0"; }
+        function hideMenu(){ navLinks.style.right = "-300px"; }
+</script>
+<script src="explore.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Applied Jobs</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<style>
+      .job-card {
+        background: #f5f5f5;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        margin: 20px auto;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+      }
+      .job-card h3 {
+        color: orangered;
+        margin-bottom: 8px;
+      }
+      .job-card p {
+        margin: 4px 0;
+      }
+      .job-card button {
+        margin-top: 10px;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 6px;
+        background: red;
+        color: white;
+        cursor: pointer;
+        width: 150px;
+        font-weight: bold;
+        align-self: flex-start;
+        transition: background 0.2s ease-in-out;
+      }
+      .job-card button:hover {
+        background: darkred;
+      }
+
+      .tabs {
+        margin-bottom: 20px;
+        text-align: center;
+        }
+
+        .tab-btn {
+        padding: 15px 21px;
+        border: none;
+        background: #eee;
+        margin-right: 8px;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        }
+
+        .tab-btn.active {
+        background: orangered;
+        color: white;
+        }
+
+        .tab-pane {
+        display: none;
+        }
+
+        .tab-pane.active {
+        display: block;
+        }
+
+    </style>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li class="active"><a href="youth_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="youth_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="test.html"><i class="fa fa-pencil-alt"></i> <span class="nav_item">Take the Test</span></a></li>
+                <li><a href="find_jobs.html"><i class="fas fa-search"></i> <span class="nav_item">Find Jobs</span></a></li>
+                <li><a href="applied_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Applied Jobs</span></a></li>
+                <li><a href="notifications.html"><i class="fas fa-bell"></i> <span class="nav_item">Notifications</span></a></li>
+                <li><a href="training.html"><i class="fas fa-graduation-cap"></i> <span class="nav_item">Training</span></a></li>
+                <li><a href="youth_posts.html"><i class="fas fa-clipboard"></i></i> <span class="nav_item">View Posts</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                </div>
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="applications">Applications</button>
+                    <button class="tab-btn" data-tab="appointed">Appointed/Accepted</button>
+                    <button class="tab-btn" data-tab="unsuccessful">Unsuccessful</button>
+                </div>
+
+                <!-- Tab content -->
+                <div class="tab-content">
+                    <div id="applications" class="tab-pane active"></div>
+                    <div id="appointed" class="tab-pane"></div>
+                    <div id="unsuccessful" class="tab-pane"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="profile_side_bar.js"></script>
+<script src="applied_jobs.js"></script>
+</body>
+</html>

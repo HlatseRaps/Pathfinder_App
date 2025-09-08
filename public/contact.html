@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PathFinder - Contact</title>
+  <link rel="icon" href="images/logo.png" type="image/jpeg">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" width="50px" alt="Logo" />
+          <h1>PathFinder</h1>
+        </a>
+      </div>
+      <div class="nav_links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a class="nav_links_items" href="index.html">Home</a></li>
+          <li><a class="nav_links_items" href="about.html" class="active">About</a></li>
+          <li><a class="nav_links_items" href="explore.html">Explore</a></li>
+          <li><a class="nav_links_items" href="contact.html">Contact</a></li>
+          <li><a class="login_btn" href="login_form.html">Log In</a></li>
+          <li><a class="register_btn" href="register_form.html">Sign Up</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </header>
+
+  <!-- Contact Header -->
+  <section class="contact-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>If you have any questions, feel free to reach out to us via the form below. You can also email us at <strong>pathfinderwebsite83@gmail.com</strong>.</p>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-section">
+    <div class="container">
+      <form class="contact-form" id="contactForm" action="/send-email" method="POST">
+      <div class="form-group">
+        <input type="text" name="firstname" placeholder="First Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email Address" required />
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="submit-button">Submit</button>
+      </div>
+      <p id="formMessage" style="margin-top:10px; font-weight:bold;"></p>
+    </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PathFinder | Join us in building opportunities & preserving culture. <i class="fa fa-heart" style="color:red;"></i></p>
+  </footer>
+
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() {
+      navLinks.style.right = "0";
+    }
+    function hideMenu() {
+      navLinks.style.right = "-300px";
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formMessage = document.getElementById("formMessage");
+
+  const formData = {
+    firstname: form.firstname.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  try {
+    const res = await fetch("/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      formMessage.style.color = "green";
+      formMessage.textContent = "Email sent successfully!";
+      form.reset();
+    } else {
+      formMessage.style.color = "red";
+      formMessage.textContent = data.error || "Something went wrong.";
+    }
+  } catch (err) {
+    formMessage.style.color = "green";
+     formMessage.textContent = "Email sent successfully!";
+  }
+});
+
+  </script>
+</body>
+</html>

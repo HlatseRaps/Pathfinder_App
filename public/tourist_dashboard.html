@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Job Seeker</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li><a href="tourist_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="tourist_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="explore_locations.html"><i class="fas fa-map-marked-alt"></i> <span class="nav_item">Explore Location</span></a></li>
+                <li><a href="bookings.html"><i class="fas fa-calendar-check"></i>  <span class="nav_item">Bookings</span></a></li>
+                <li><a href="reviews.html" class="active"><i class="fas fa-star"></i> <span class="nav_item">Reviews</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                </div>
+                            <section class="main-dashboard-area">
+                <h2>Dashboard Overview</h2>
+                <p>This is your control center. You can access all your Locations, Bookings, Reviews, and profile updates from here. Everything you need is just one click away.</p>
+                        <!-- Quick Access Cards -->
+            <div class="cards">
+             <div class="card">
+                <i class="fas fa-user card-icon"></i>
+                <h3>Profile</h3>
+                <p>View and update your profile information</p>
+                <a href="tourist_profile.html">View Profile</a>
+                </div>
+                <div class="card">
+                <i class="fas fa-map-marked-alt card-icon"></i>
+                <h3>Explore Locations</h3>
+                <p>Explore dirrefent locations</p>
+                <a href="explore_locations.html">Explore locations</a>
+                </div>
+                <div class="card">
+                <i class="fas fa-calendar-check card-icon"></i>
+                <h3>Bookings</h3>
+                <p>View your Bookings</p>
+                <a href="bookings.html">View your bookings</a>
+                </div>
+                <div class="card">
+                <i class="fas fa-star card-icon"></i>
+                <h3>Reviews</h3>
+                <p>Here are some reviews</p>
+                <a href="applied_jobs.html">View reviews</a>
+                </div>
+            </div>
+            </section>
+                
+            </div>
+        </div>
+    </div>
+
+<script src="profile_side_bar.js"></script>
+<script>
+
+</script>
+</body>
+</html>

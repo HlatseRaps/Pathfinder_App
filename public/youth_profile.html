@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Profile</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName"></p>
+                    <p class="user_type" id="userRole"></p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li class="active"><a href="youth_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="youth_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="test.html"><i class="fa fa-pencil-alt"></i> <span class="nav_item">Take the Test</span></a></li>
+                <li><a href="find_jobs.html"><i class="fas fa-search"></i> <span class="nav_item">Find Jobs</span></a></li>
+                <li><a href="applied_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Applied Jobs</span></a></li>
+                <li><a href="notifications.html"><i class="fas fa-bell"></i> <span class="nav_item">Notifications</span></a></li>
+                <li><a href="training.html"><i class="fas fa-graduation-cap"></i> <span class="nav_item">Training</span></a></li>
+                <li><a href="youth_posts.html"><i class="fas fa-clipboard"></i></i> <span class="nav_item">View Posts</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <div class="profile-container">
+
+    <div class="main-profile">
+        <div class="avatar-circle-second" id="profileAvatar"></div>
+        <div class="profile-handles">
+            <h2 id="profileName"></h2>
+            <p id="profileEmail"></p>
+        </div>
+    </div>
+
+    <div class="profile-grid">
+
+        <div class="profile-section">
+            <h3>Basic Details</h3>
+            <label>First Name</label><input type="text" name="first_name">
+            <label>Last Name</label><input type="text" name="last_name">
+            <label>Email</label><input type="email" name="email">
+            <label>ID Number</label><input type="text" name="idNumber">
+            <label>Date of Birth</label><input type="date" name="dob">
+            <label>Gender</label>
+            <select name="gender">
+                <option disabled selected></option>
+                <option>Female</option>
+                <option>Male</option>
+                <option>Other</option>
+            </select>
+            <label>Location</label><input type="text" name="location">
+            <label>Phone</label><input type="text" name="phone">
+        </div>
+
+        <div class="profile-section">
+            <h3>Education & Training</h3>
+            <label>Education Level</label>
+            <select name="educationLevel">
+                <option disabled selected></option>
+                <option>None</option>
+                <option>Primary School</option>
+                <option>High School</option>
+                <option>Tertiary</option>
+            </select>
+            <label>Highest Grade</label>
+            <select name="highestGrade">
+                <option disabled selected></option>
+                <option>Matric</option>
+                <option>Grade 11</option>
+                <option>Grade 10</option>
+            </select>
+            <label>Courses Completed</label><input type="text" name="courses" placeholder="Hospitality/tourism courses">
+            <label>School/College</label><input type="text" name="school">
+        </div>
+
+        <div class="profile-section">
+            <h3>Skills & Languages</h3>
+            <label>Skills</label><input type="text" name="skills" placeholder="Customer service, cooking, etc">
+            <label>Languages</label><input type="text" name="languages" placeholder="English, Zulu, etc">
+        </div>
+
+        <div class="profile-section">
+            <h3>Experience</h3>
+            <label>Previous Jobs / Volunteering</label>
+            <textarea rows="4" name="experience"></textarea>
+        </div>
+
+        <div class="profile-section">
+            <h3>Availability</h3>
+            <select name="availability">
+                <option disabled selected></option>
+                <option>Full-time</option>
+                <option>Part-time</option>
+                <option>Seasonal</option>
+                <option>Specific Days/Hours</option>
+            </select>
+        </div>
+
+        <div class="profile-section">
+            <h3>Preferred Work Type</h3>
+            <input type="text" name="workType" placeholder="Hotel, Lodge, Restaurant, Cultural Guide">
+        </div>
+
+        <div class="profile-section">
+            <h3>Transport Access</h3>
+            <select name="transport">
+                <option disabled selected></option>
+                <option>Own Transport</option>
+                <option>Need Employer-Provided Transport</option>
+            </select>
+        </div>
+
+        <div class="profile-section">
+            <h3>Extra Info</h3>
+            <textarea rows="3" name="extraInfo" placeholder="Relocation, health clearance, special needs"></textarea>
+        </div>
+    </div>
+
+    <div class="profile-buttons">
+        <button class="btn-back" onclick="window.history.back()"><i class="fas fa-arrow-left"></i> Back</button>
+        <button class="btn-save" onclick="saveProfile()"><i class="fas fa-save"></i> Save Changes</button>
+         <div id="saveMessage" style="color: green; margin: 10px 0; display: none;"></div>
+    </div>
+
+</div>
+        </div>
+    </div>
+
+    <script src="youth_profile.js"></script>
+</body>
+</html>

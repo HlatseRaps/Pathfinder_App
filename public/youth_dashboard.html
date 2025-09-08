@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Job Seeker</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li class="active"><a href="youth_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="youth_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="test.html"><i class="fa fa-pencil-alt"></i> <span class="nav_item">Take the Test</span></a></li>
+                <li><a href="find_jobs.html"><i class="fas fa-search"></i> <span class="nav_item">Find Jobs</span></a></li>
+                <li><a href="applied_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Applied Jobs</span></a></li>
+                <li><a href="notifications.html"><i class="fas fa-bell"></i> <span class="nav_item">Notifications</span></a></li>
+                <li><a href="training.html"><i class="fas fa-graduation-cap"></i> <span class="nav_item">Training</span></a></li>
+                <li><a href="youth_posts.html"><i class="fas fa-clipboard"></i></i> <span class="nav_item">View Posts</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                    <p>Here's your central hub where you can manage everything in one place.</p>
+                </div>
+
+                <!-- Main Dashboard Area -->
+                <section class="main-dashboard-area">
+                    <h2>Dashboard Overview</h2>
+                    <p>This is your control center. You can access all your jobs, notifications, training, tests, and profile updates from here. Everything you need is just one click away.</p>
+
+                    <!-- Quick Access Cards -->
+                    <div class="cards">
+                        <div class="card">
+                            <i class="fas fa-user card-icon"></i>
+                            <h3>Profile</h3>
+                            <p>View and update your profile information</p>
+                            <a href="youth_profile.html">View Profile</a>
+                        </div>
+                        <div class="card">
+                            <i class="fa fa-pencil-alt card-icon"></i>
+                            <h3>Take the Test</h3>
+                            <p>Complete your skills & aptitude tests</p>
+                            <a href="test.html">Start Test</a>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-search card-icon"></i>
+                            <h3>Find Jobs</h3>
+                            <p>Explore new opportunities tailored to you</p>
+                            <a href="find_jobs.html">Search Jobs</a>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-briefcase card-icon"></i>
+                            <h3>Applied Jobs</h3>
+                            <p>You have applied to <span class="applied_count"></span> jobs</p>
+                            <a href="applied_jobs.html">View All</a>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-bell card-icon"></i>
+                            <h3>Notifications</h3>
+                            <p>You have <span class="notif_count"></span> new notifications</p>
+                            <a href="notifications.html">View All</a>
+                        </div>
+                        <div class="card">
+                            <i class="fas fa-graduation-cap card-icon"></i>
+                            <h3>Training</h3>
+                            <p>Check your upcoming courses and modules</p>
+                            <a href="training.html">View Training</a>
+                        </div>
+                    </div>
+                </section>
+                <section class="media-post-form">
+                    <h2>Post Your Media</h2>
+                    <p>Share your videos or pictures along with your profile details.</p>
+                    <form id="mediaForm" enctype="multipart/form-data">
+                        <div class="form-grid">
+                            <div>
+                            <label>First Name</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                            </div>
+                            <div>
+                            <label>Last Name</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                            </div>  
+                            <div>
+                            <label>Email</label>
+                            <input type="email" name="email">
+                            </div>
+                             <div>
+                            <label>Location Name</label>
+                            <input type="text" id="location_name" name="location_name" required>
+                            </div>
+                            <div>
+                            <label>City</label>
+                            <input type="text" id="city" name="city" required>
+                            </div>  
+                            <div>
+                            <label>Country</label>
+                            <input type="text" id="country" name="country" required>
+                            </div>
+                            <div>
+                            <label>Post Description</label>
+                            <textarea id="description" name="description" rows="2"></textarea>
+                            </div>
+                            <div>
+                            <label>Category:</label>
+                            <select id="category" name="category" required>
+                                <option value="" disabled></option>
+                                <option value="rural">Rural</option>
+                                <option value="urban">Urban</option>
+                            </select>
+                            </div>
+
+                            <!-- Media uploads -->
+                            <div>
+                            <label>Upload Pictures</label>
+                            <input type="file" id="pictures" name="pictures" accept="image/*" multiple>
+                            </div>
+                            <div>
+                            <label>Upload Videos</label>
+                            <input type="file" id="videos" name="videos" accept="video/*" multiple>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Post Media</button>
+                        <div id="saveMessage" style="color: green; margin: 10px 0; display: none;"></div>
+                        </form>
+                    </section>
+            </div>
+        </div>
+    </div>
+
+<style>
+
+.media-post-form form {
+  max-width: 900px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.media-post-form h2{
+    color: orangered;
+}
+
+.media-post-form p{
+    text-align: center;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-grid div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: orangered;
+}
+
+input, select, textarea {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: orangered;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background-color: #d9480f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script src="profile_side_bar.js"></script>
+<script>
+  document.getElementById("mediaForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+  const form = this;
+  const formData = new FormData(form);
+
+  // show loading message
+  const msgEl = document.getElementById("saveMessage");
+  msgEl.style.display = 'block';
+  msgEl.style.color = 'black';
+  msgEl.textContent = 'Posting...';
+
+  try {
+    const res = await fetch('/api/youth/media', {
+      method: 'POST',
+      body: formData,
+      credentials: 'same-origin' // ensures cookies/session are sent
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      msgEl.style.color = 'red';
+      msgEl.textContent = 'Error: ' + (data.error || res.statusText);
+      console.error('POST error', data);
+      return;
+    }
+
+    msgEl.style.color = 'green';
+    msgEl.textContent = 'Media posted successfully!';
+    form.reset();
+
+    // reload posts automatically if on the posts page:
+    if (typeof loadPosts === 'function') loadPosts();
+  } catch (err) {
+    msgEl.style.color = 'red';
+    msgEl.textContent = 'Failed to post';
+    console.error(err);
+  }
+});
+
+</script>
+
+</body>
+</html>

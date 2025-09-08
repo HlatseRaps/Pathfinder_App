@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | View Applicants</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<style>
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); /* semi-transparent background */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+}
+
+.modal-content img, .modal-content video {
+  max-width: 200px;
+  margin: 8px;
+  border-radius: 6px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.close:hover {
+  color: black;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.media-grid img, .media-grid video {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.modal-buttons button {
+  margin: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#confirmYes { background: red; color: white; }
+#confirmNo { background: gray; color: white; }
+
+</style>
+
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li><a href="employer_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="employer_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="post_jobs.html"><i class="fas fa-plus-square"></i> <span class="nav_item">Post a Job</span></a></li>
+                <li><a href="manage_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Manage Jobs</span></a></li>
+                <li><a href="view_applicants.html" class="active"><i class="fas fa-users"></i> <span class="nav_item">View Applicants</span></a></li>
+                <li><a href="employer_media_posts.html"><i class="fas fa-clipboard"></i></i> <span class="nav_item">View Media Posts</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                </div>
+                <h2 class="page-title">View Applicants</h2>
+
+                <div class="search_engine">
+                    <input type="search" id="jobSearch" placeholder="Search by name or email">
+                    <button type="button" id="searchBtn"><i class="fas fa-search"></i></button>
+               </div>
+               <!-- Status Legend -->
+                <div class="status-legend" style="margin-bottom: 15px; display:flex; gap: 15px; align-items:center; justify-content: center;">
+                    <div style="display:flex; align-items:center; gap:5px;">
+                        <div style="width:20px; height:20px; background-color:#00ff3c; border:1px solid #00ff3c;"></div>
+                        <span>Accepted</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:5px;">
+                        <div style="width:20px; height:20px; background-color:#ff0015; border:1px solid #ff0015;"></div>
+                        <span>Declined</span>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:5px;">
+                        <div style="width:20px; height:20px; background-color:#ffffff; border:1px solid #cecece;"></div>
+                        <span>Pending</span>
+                    </div>
+                </div>
+
+                <input type="hidden" id="jobIdInput" value="1"> <!-- replace with current job ID -->
+                <table id="applicantsTable" aria-label="List of job applicants">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Applied For</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Application Date</th>
+                        <th>CV</th>
+                        <th>Videos</th>
+                        <th>Images</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="applicantsBody">
+                    <!-- Applicants inserted by JS -->
+                    </tbody>
+                </table>
+
+                <p id="noApplicants" style="display:none;">No applicants found.</p>
+                
+            </div>
+        </div>
+    </div>
+
+<!-- Profile Modal -->
+<div id="profileModal" style="
+  display:none; 
+  position:fixed; 
+  top:0; left:0; width:100%; height:100%; 
+  background:rgba(0,0,0,0.6); 
+  justify-content:center; 
+  align-items:center; 
+  z-index:9999;">
+  <div style="
+    background:#fff; 
+    padding:20px; 
+    border-radius:10px; 
+    max-width:600px; 
+    max-height:90%; 
+    overflow-y:auto;
+    position:relative;">
+    <span onclick="closeModal()" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+    <div id="modalContent"></div>
+  </div>
+</div>
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <p id="confirmText">Are you sure?</p>
+    <div class="modal-buttons">
+      <button id="confirmYes">Yes</button>
+      <button id="confirmNo">Cancel</button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="profile_side_bar.js"></script>
+<script src="view_applicants.js"></script>
+</body>
+</html>

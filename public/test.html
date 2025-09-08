@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Job Seeker</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li class="active"><a href="youth_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="youth_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="test.html"><i class="fa fa-pencil-alt"></i> <span class="nav_item">Take the Test</span></a></li>
+                <li><a href="find_jobs.html"><i class="fas fa-search"></i> <span class="nav_item">Find Jobs</span></a></li>
+                <li><a href="applied_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Applied Jobs</span></a></li>
+                <li><a href="notifications.html"><i class="fas fa-bell"></i> <span class="nav_item">Notifications</span></a></li>
+                <li><a href="training.html"><i class="fas fa-graduation-cap"></i> <span class="nav_item">Training</span></a></li>
+                <li><a href="youth_posts.html"><i class="fas fa-clipboard"></i></i> <span class="nav_item">View Posts</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+<!-- Dashboard Content -->
+<div class="dashboard_content">
+    <div class="welcome_message">
+        <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+    </div>
+
+    <!-- Chat Section -->
+    <div class="chat_section">
+        <h3>ASK LOLA</h3>
+        <div id="chatContainer" class="chat_container">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div class="chat_input_area">
+            <textarea id="userMessage" placeholder="Type your question here..." rows="2"></textarea>
+            <button id="sendButton">Send</button>
+            <button id="clearButton">Clear Chat</button>
+            <label id="analyzeCVBtn" for="cvUpload" class="cv_button">upload Cv</label>
+           
+             <input type="file" id="cvUpload" accept=".pdf,.doc,.docx" class="cv_input" style="display: none;">
+        </div> 
+
+</div>
+
+
+<script src="profile_side_bar.js"></script>
+
+<script src="/chat.js"></script>
+
+
+
+</body>
+</html>

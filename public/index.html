@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PathFinder | Connecting Youth, Employers & Tourists</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="home.html">
+          <img src="images/logo.png" alt="PathFinder Logo" />
+          <h1>PathFinder</h1>
+        </a>
+      </div>
+      <div class="nav_links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a class="nav_links_items" href="index.html">Home</a></li>
+          <li><a class="nav_links_items" href="about.html">About</a></li>
+          <li><a class="nav_links_items" href="explore.html">Explore</a></li>
+          <li><a class="nav_links_items" href="contact.html">Contact</a></li>
+          <li><a class="login_btn" href="login_form.html" target="_blank">Log In</a></li>
+          <li><a class="register_btn" href="register_form.html" target="_blank">Sign Up</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero_section">
+    <div class="hero_text">
+      <h1>Empowering Youth. Preserving Culture. Enriching Tourism.</h1>
+      <p>PathFinder connects youth, employers, tourists, and elders in one ecosystem.</p>
+      <a href="register.html" class="hero_button">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>What You Can Do with PathFinder</h2>
+    <div class="feature_grid">
+      <div class="card">
+        <i class="fa fa-user-graduate icon"></i>
+        <h3>Youth</h3>
+        <p>Showcase your skills through short videos and find opportunities.</p>
+      </div>
+      <div class="card">
+        <i class="fa fa-briefcase icon"></i>
+        <h3>Employers</h3>
+        <p>Discover talented local youth and connect with them directly.</p>
+      </div>
+      <div class="card">
+        <i class="fa fa-globe icon"></i>
+        <h3>Tourists</h3>
+        <p>Explore authentic cultural experiences and book them easily.</p>
+      </div>
+      <div class="card">
+        <i class="fa fa-book icon"></i>
+        <h3>Elders</h3>
+        <p>Preserve traditions, recipes, and stories for future generations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Explore Skills Section -->
+  <section class="explore">
+    <h2>Explore Skills & Culture</h2>
+    <div class="explore_grid">
+      <div><img src="images/cooking.jpg" alt="Cooking"><p>Cooking</p></div>
+      <div><img src="images/music.jpg" alt="Music"><p>Music</p></div>
+      <div><img src="images/crafts.jpg" alt="Crafts"><p>Crafts</p></div>
+      <div><img src="images/guiding.jpg" alt="Guiding"><p>Guiding</p></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about_preview">
+    <h2>What is PathFinder?</h2>
+    <p>PathFinder is an AI-powered platform that creates opportunities for youth, connects employers with talent, enriches tourism, and preserves culture for future generations.</p>
+    <a href="about.html" class="learn_more_btn">Learn More</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PathFinder | Join us in building opportunities & preserving culture. <i class="fa fa-heart" style="color:red;"></i></p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() { navLinks.style.right = "0"; }
+    function hideMenu() { navLinks.style.right = "-300px"; }
+  </script>
+</body>
+</html>

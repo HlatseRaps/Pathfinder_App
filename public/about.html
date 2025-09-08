@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | PathFinder</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="home.html">
+                    <img src="images/logo.png" width="50px" alt="PathFinder Logo">
+                    <h1>PathFinder</h1>
+                </a>
+            </div>
+            <div class="nav_links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a class="nav_links_items" href="index.html">Home</a></li>
+                    <li><a class="nav_links_items" href="about.html" class="active">About</a></li>
+                    <li><a class="nav_links_items" href="explore.html">Explore</a></li>
+                    <li><a class="nav_links_items" href="contact.html">Contact</a></li>
+                    <li><a class="login_btn" href="login_form.html">Log In</a></li>
+                    <li><a class="register_btn" href="register_form.html">Sign Up</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+    </header>
+
+    <!-- Hero / Intro Section -->
+    <section class="about_hero">
+        <div class="about_hero_text">
+            <h1>Empowering Rural Youth, Connecting Employers & Enriching Tourism</h1>
+            <p>PathFinder is an AI-powered platform designed to bridge gaps between opportunity and talent while preserving culture and enriching tourism experiences across South Africa.</p>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="about_story">
+        <div class="container">
+            <h2>Our Story</h2>
+            <p>
+                In many rural areas, young people have the talent, drive, and potential to thrive but often lack access to meaningful career opportunities. Employers struggle to find candidates who are both skilled and culturally aligned. Tourists seek authentic experiences but often don’t know where to find them. PathFinder was created to solve these challenges by connecting all three groups in a seamless ecosystem. 
+            </p>
+            <p>
+                Our journey began with a simple idea: what if technology could empower young people, help employers find the right talent, and enhance tourism while preserving cultural heritage? Through collaboration with educators, hospitality professionals, and cultural custodians, PathFinder evolved into a platform that combines AI-driven aptitude testing, skills matching, and cultural preservation—all in one easy-to-use interface.
+            </p>
+        </div>
+    </section>
+
+    <!-- For Youth Section -->
+    <section class="about_youth">
+        <div class="container">
+            <h2>For Youth</h2>
+            <p>
+                PathFinder helps young people discover their strengths and career potential through personalized skills and interest assessments. Our AI-powered test evaluates your unique combination of skills, experiences, personality traits, and aspirations, then recommends career paths in hospitality and tourism that match your profile. 
+            </p>
+            <p>
+                Beyond finding jobs, PathFinder allows you to showcase your skills through video portfolios, gain mentorship, and connect with local employers directly. We aim to empower youth to not just find work but find opportunities where they can grow, thrive, and contribute meaningfully to their communities.
+            </p>
+        </div>
+    </section>
+
+    <!-- For Employers Section -->
+    <section class="about_employers">
+        <div class="container">
+            <h2>For Employers</h2>
+            <p>
+                Employers in the hospitality and tourism sectors often face challenges hiring staff who are not only skilled but culturally aligned and motivated. PathFinder’s AI-driven platform simplifies recruitment by matching you with candidates whose skills, interests, and personalities fit your requirements. 
+            </p>
+            <p>
+                Our system streamlines the hiring process, saving time and improving the quality of hires. By providing insights into candidate strengths, potential, and learning capacity, employers can focus on training, growth, and retention rather than searching for talent manually.
+            </p>
+        </div>
+    </section>
+
+    <!-- For Tourists Section -->
+    <section class="about_tourists">
+        <div class="container">
+            <h2>For Tourists</h2>
+            <p>
+                PathFinder bridges the gap between tourists and authentic hospitality experiences. From discovering local cuisine to cultural performances, guided tours, and traditional crafts, tourists can explore South Africa with confidence and ease. 
+            </p>
+            <p>
+                By connecting visitors with passionate local professionals, PathFinder ensures every experience is safe, memorable, and enriching, supporting both tourism and community development.
+            </p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="about_how_it_works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <ul>
+                <li>Step 1: Take a simple skills & interest test to identify your strengths.</li>
+                <li>Step 2: Our AI analyzes your results to find suitable career opportunities.</li>
+                <li>Step 3: Receive personalized job recommendations in hospitality and tourism.</li>
+                <li>Step 4: Explore the role, connect with employers, or apply directly through the platform.</li>
+                <li>Step 5: Build your portfolio, gain mentorship, and track your progress over time.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="about_mission_vision">
+        <div class="container">
+            <div class="mission">
+                <h2>Our Mission</h2>
+                <p>
+                    PathFinder’s mission is to empower young people in rural and underrepresented communities by opening doors to meaningful career opportunities in hospitality and tourism. We aim to harness AI, mentorship, and digital portfolios to provide youth with the skills, guidance, and visibility needed to thrive professionally.
+                </p>
+            </div>
+            <div class="vision">
+                <h2>Our Vision</h2>
+                <p>
+                    We envision a South Africa where every young person has the opportunity to grow professionally, employers can find the right talent efficiently, and tourists can experience authentic culture seamlessly. By bridging these gaps, PathFinder seeks to uplift communities, preserve traditions, and strengthen the hospitality industry for generations to come.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+   <footer>
+    <p>&copy; 2025 PathFinder | Join us in building opportunities & preserving culture. <i class="fa fa-heart" style="color:red;"></i></p>
+  </footer>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu(){ navLinks.style.right = "0"; }
+        function hideMenu(){ navLinks.style.right = "-300px"; }
+    </script>
+</body>
+</html>

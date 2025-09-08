@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Job Seeker</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="chapters.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li class="active"><a href="youth_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="youth_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="test.html"><i class="fa fa-pencil-alt"></i> <span class="nav_item">Take the Test</span></a></li>
+                <li><a href="find_jobs.html"><i class="fas fa-search"></i> <span class="nav_item">Find Jobs</span></a></li>
+                <li><a href="applied_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Applied Jobs</span></a></li>
+                <li><a href="notifications.html"><i class="fas fa-bell"></i> <span class="nav_item">Notifications</span></a></li>
+                <li><a href="training.html"><i class="fas fa-graduation-cap"></i> <span class="nav_item">Training</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                </div>
+                
+            <div class="wrapper">
+                <!-- Header + progress -->
+                <div class="course_head">
+                    <div>
+                        <h2>Communication Skills for Hospitality</h2>
+                        <p>Master practical, real-world communication to delight guests, collaborate with teams, and advance your hospitality career.</p>
+                        <div class="progress">
+                            <span id="progressBar"></span>
+                        </div>
+                        <div class="progress_meta">
+                        <span id="progressText">0% complete</span>
+                        <span class="pill"><i class="far fa-clock"></i> ~ 3–4 hours total</span>
+                        </div>
+                    </div>
+                    <div class="head_actions">
+                        <button class="btn secondary" id="btnReset"><i class="fas fa-redo"></i> Reset Progress</button>
+                        <button class="btn primary" id="btnSave"><i class="fas fa-save"></i> Save Progress</button>
+                    </div>
+                </div>
+
+                <!-- Body -->
+                <div class="course_body">
+                    <!-- Left: chapter list -->
+                    <aside class="chapters">
+                        <h3>Chapters</h3>
+                        <ul class="chapter_list" id="chapterList"></ul>
+                    </aside>
+
+                    <!-- Right: chapter content -->
+                    <section class="chapter_card">
+                        <h2 id="chapterTitle"></h2>
+                        <p class="chapter_sub" id="chapterKicker"></p>
+
+                        <div class="chapter_grid" id="chapterContent">
+                        <!-- dynamic -->
+                        </div>
+
+                        <div class="nav_bar">
+                        <button class="btn secondary" id="btnPrev"><i class="fas fa-arrow-left"></i> Previous</button>
+                        <span class="pill"><i class="fas fa-flag-checkered"></i> <span id="chapterCount">Chapter 1 of 10</span></span>
+                        <button class="btn primary" id="btnNext">Next <i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    
+<script src="communication_skills.js"></script>
+<script src="profile_side_bar.js"></script>
+
+</body>
+</html>

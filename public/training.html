@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Training</title>
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="youth_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+    <div class="dashboard">
+
+        <!-- Sidebar -->
+        <div class="side_bar" id="sidebar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo" />
+                <span class="logo_text">PathFinder</span>
+            </div>
+
+            <!-- User Info -->
+            <div class="user">
+                <div class="user-img avatar-circle" id="userAvatar"></div>
+                <div class="user-info">
+                    <p class="bold" id="userName">Guest</p>
+                    <p class="user_type" id="userRole">Youth</p>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <ul>
+                <li class="active"><a href="youth_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+                <li><a href="youth_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+                <li><a href="test.html"><i class="fa fa-pencil-alt"></i> <span class="nav_item">Take the Test</span></a></li>
+                <li><a href="find_jobs.html"><i class="fas fa-search"></i> <span class="nav_item">Find Jobs</span></a></li>
+                <li><a href="applied_jobs.html"><i class="fas fa-briefcase"></i> <span class="nav_item">Applied Jobs</span></a></li>
+                <li><a href="notifications.html"><i class="fas fa-bell"></i> <span class="nav_item">Notifications</span></a></li>
+                <li><a href="training.html"><i class="fas fa-graduation-cap"></i> <span class="nav_item">Training</span></a></li>
+                <li><a href="youth_posts.html"><i class="fas fa-clipboard"></i></i> <span class="nav_item">View Posts</span></a></li>
+                <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main_content">
+            <!-- Top Nav -->
+            <div class="top_nav">
+                <img src="images/logo.png" alt="logo" />
+                <h1>PathFinder</h1>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                </div>
+                <div class="content_section">
+                <h2>Boost Your Hospitality Career with Our Training Programs</h2>
+                <p class="intro">
+                Our carefully designed courses help you gain essential skills and knowledge
+                to succeed in the hospitality industry. Explore the programs below and register today!
+                </p>
+
+                <div class="training_cards">
+                <div class="training_card">
+                    <div class="training_icon"><i class="fas fa-utensils"></i></div>
+                    <h3 class="training_title">Hospitality Basics</h3>
+                    <p class="training_desc">
+                    Learn customer service essentials, hygiene, teamwork, and how to provide excellent guest experiences.
+                    </p>
+                    <button class="btn_register" onclick="registerCourse('hospitality_basics')" >Register</button>
+                </div>
+
+                <div class="training_card">
+                    <div class="training_icon"><i class="fas fa-comments"></i></div>
+                    <h3 class="training_title">Communication Skills</h3>
+                    <p class="training_desc">
+                    Master effective communication, conflict resolution, and build strong relationships with customers and colleagues.
+                    </p>
+                    <button class="btn_register" onclick="registerCourse('Communication_skills')">Register</button>
+                </div>
+
+                <div class="training_card">
+                    <div class="training_icon"><i class="fas fa-hand-holding-water"></i></div>
+                    <h3 class="training_title">Food Safety & Hygiene</h3>
+                    <p class="training_desc">
+                    Understand safe food handling procedures and maintain hygiene standards to protect guests and staff.
+                    </p>
+                    <button class="btn_register" onclick="registerCourse('food')">Register</button>
+                </div>
+
+                <div class="training_card">
+                    <div class="training_icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="training_title">Advanced Customer Service</h3>
+                    <p class="training_desc">
+                    Develop skills to handle difficult guests, resolve conflicts, and deliver exceptional hospitality experiences.
+                    </p>
+                    <button class="btn_register" onclick="registerCourse('customer_service')">Register</button>
+                </div>
+                
+                <div class="training_card">
+                    <div class="training_icon"><i class="fas fa-coffee"></i></div>
+                    <h3 class="training_title">Interview Mindset & Preparation</h3>
+                    <p class="training_desc">
+                    building confidence and readiness by researching the role, practicing responses, and approaching the interview with a positive, professional attitude.
+                    </p>
+                    <button class="btn_register" onclick="registerCourse('visual_practice')">Register</button>
+                </div>
+                </div>
+
+                <div class="call_to_action">
+                <h3>Ready to take your career to the next level?</h3>
+                <p>Sign up for our comprehensive training programs today and unlock new opportunities!</p>
+                <button class="btn_register">Register for All Programs</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function registerCourse(course) {
+        // redirect to training_details with the course parameter
+        window.location.href = "training_details.html?course=" + course;
+    }
+</script>
+<script src="profile_side_bar.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | PathFinder</title>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <div class="register_page">
+      
+      <!-- Info Section -->
+      <div class="register_info" id="registerInfo">
+        <h1 id="registerTitle">Join the PathFinder Community</h1>
+        <p id="registerDescription">
+          Join PathFinder today and unlock career opportunities, mentorship, and cultural experiences!
+        </p>
+      </div>
+
+      <!-- Registration Form -->
+      <div class="register_form">
+        <div class="logo_logo">
+          <img src="images/logo.png" alt="Logo" width="50px" />
+          <h1>PathFinder</h1>
+        </div>
+
+        <!-- Role Selection -->
+        <div class="role_selection">
+          <h2>Register As</h2>
+          <div class="role_buttons">
+            <button class="role_button" onclick="selectRole('youthForm')">👤 Youth</button>
+            <button class="role_button" onclick="selectRole('employerForm')">🏠 Employer</button>
+            <button class="role_button" onclick="selectRole('touristForm')">🧳 Tourist</button>
+          </div>
+        </div>
+
+        <!-- Forms Section -->
+        <div id="formSection">
+
+          <!-- Job Seeker Form -->
+          <form id="youthForm" class="hidden" action="/register" method="post">
+            <h3>Youth Registration</h3>
+             <input type="hidden" name="role" value="youth" />
+            <div class="form_group">
+              <label>First Name:</label>
+              <input type="text" name="firstName" placeholder="Enter your first name" required />
+            </div>
+            <div class="form_group">
+              <label>Last Name:</label>
+              <input type="text" name="lastName" placeholder="Enter your last name" required />
+            </div>
+            <div class="form_group">
+              <label>Email Address:</label>
+              <input type="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form_group">
+              <label>Phone Number:</label>
+              <input type="tel" name="phone" placeholder="Enter your phone number" required />
+            </div>
+            <div class="form_group">
+              <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form_group">
+              <label>Confirm Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="register_button">Register</button>
+            <p class="form_message" id="formMessage"></p>
+            <p class="already_acc">Already have an Account? <a href="login_form.html">Login</a></p>
+          </form>
+
+          <!-- Employer Form -->
+          <form id="employerForm" class="hidden" action="/register" method="post">
+            <h3>Employer Registration</h3>
+             <input type="hidden" name="role" value="employer" />
+            <div class="form_group">
+              <label>First Name:</label>
+              <input type="text" name="firstName" placeholder="Enter your first name" required />
+            </div>
+            <div class="form_group">
+              <label>Last Name:</label>
+              <input type="text" name="lastName" placeholder="Enter your last name" required />
+            </div>
+            <div class="form_group">
+              <label>Email Address:</label>
+              <input type="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form_group">
+              <label>Company Name:</label>
+              <input type="text" name="companyName" required />
+            </div>
+            <div class="form_group">
+              <label>Company Location:</label>
+              <input type="text" name="companyLocation" placeholder="e.g Johannesburg, SA" required />
+            </div>
+            <div class="form_group">
+              <label>Password</label>
+              <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form_group">
+              <label>Confirm password</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="register_button">Register</button>
+            <p class="form_message" id="formMessage"></p>
+            <p class="already_acc">Already have an Account? <a href="login_form.html">Login</a></p>
+          </form>
+
+          <!-- Tourist Form -->
+          <form id="touristForm" class="hidden" action="/register" method="post">
+            <h3>Tourist Registration</h3>
+             <input type="hidden" name="role" value="tourist" />
+            <div class="form_group">
+              <label>First Name:</label>
+              <input type="text" name="firstName" placeholder="Enter your first name" required />
+            </div>
+            <div class="form_group">
+              <label>Last Name:</label>
+              <input type="text" name="lastName" placeholder="Enter your last name" required />
+            </div>
+            <div class="form_group">
+              <label>Email Address:</label>
+              <input type="email" name="email" placeholder="Enter your email" required />
+            </div>
+            <div class="form_group">
+              <label>Country of Origin:</label>
+              <input type="text" name="country" placeholder="e.g Germany, USA" required />
+            </div>
+            <div class="form_group">
+                <label>Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form_group">
+               <label >Confirm password</label>
+              <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+            </div>
+            <button type="submit" class="register_button">Register</button>
+            <p class="form_message" id="formMessage"></p>
+            <p class="already_acc">Already have an Account? <a href="login_form.html">Login</a></p>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+<script src="register.js"></script>
+<style>
+  .hidden { display: none; }
+</style>
+</body>
+</html>

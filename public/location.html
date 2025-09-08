@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Location | PathFinder</title>
+  <link rel="stylesheet" href="youth_dashboard.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <style>
+    .content{margin:20px;}
+    #title{color:orangered;text-align:center;margin:20px 0;}
+    .tabs{display:flex;gap:6px;margin:14px;flex-wrap:wrap;}
+    .tab{border:1px solid #eee;background:#fafafa;padding:8px 12px;border-radius:999px;cursor:pointer;}
+    .tab.active{background:orangered;color:#fff;border-color:transparent;}
+    .panel{display:none;background:#fff;border:1px solid #eee;border-radius:12px;padding:14px;}
+    .panel.active{display:block;}
+    #map{height:500px;border-radius:12px;}
+    .list{display:grid;gap:10px;}
+    .item{background:#f9fafb;border:1px solid #eee;border-radius:10px;padding:10px;}
+    .btn{border:none;border-radius:8px;padding:8px 12px;cursor:pointer;font-weight:600;}
+    .btn-primary{background:orangered;color:#fff; margin-top: 15px;}
+    .welcome_message{display:flex;flex-direction:row;justify-content:space-between;}
+    .welcome_message img{width:60px;border-radius:50%;}
+    .culture{
+      display: flex;
+      flex-direction: column;
+    }
+    .culture .list{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); 
+      gap: 2px; 
+    }
+  </style>
+</head>
+<body>
+<div class="dashboard">
+  <!-- Sidebar -->
+  <div class="side_bar" id="sidebar">
+    <div class="logo">
+      <img src="images/logo.png" alt="logo"/>
+      <span class="logo_text">PathFinder</span>
+    </div>
+    <div class="user">
+      <div class="user-img avatar-circle" id="userAvatar">G</div>
+      <div class="user-info">
+        <p class="bold" id="userName">Loading...</p>
+        <p class="user_type" id="userRole">Tourist</p>
+      </div>
+    </div>
+    <ul>
+        <li><a href="tourist_dashboard.html"><i class="fas fa-tachometer-alt"></i> <span class="nav_item">Dashboard</span></a></li>
+        <li><a href="tourist_profile.html"><i class="fas fa-user"></i> <span class="nav_item">Profile</span></a></li>
+        <li><a href="explore_locations.html"><i class="fas fa-map-marked-alt"></i> <span class="nav_item">Explore Location</span></a></li>
+        <li><a href="bookings.html"><i class="fas fa-calendar-check"></i>  <span class="nav_item">Bookings</span></a></li>
+        <li><a href="reviews.html" class="active"><i class="fas fa-star"></i> <span class="nav_item">Reviews</span></a></li>
+        <li><a href="home.html"><i class="fas fa-sign-out-alt"></i> <span class="nav_item">Log Out</span></a></li>
+    </ul>
+  </div>
+
+   <!-- Hamburger Menu -->
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+
+  <!-- Main Content -->
+  <div class="main_content">
+    <div class="top_nav">
+      <img src="images/logo.png" alt="logo"/>
+      <h1>PathFinder</h1>
+    </div>
+    <div class="dashboard_content">
+                <div class="welcome_message">
+                    <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                </div>
+                <h1 id="title">Location</h1>
+
+                <!-- Hero -->
+                <div id="hero" style="display:flex;gap:16px;flex-wrap:wrap">
+                  <img id="heroImg" src="images/placeholder.jpg" style="width:320px;height:200px;object-fit:cover;border-radius:12px;">
+                  <div>
+                    <h3 id="city" style="max-width:680px;color:orangered;margin-bottom: 4px;"></h3>
+                    <p id="country" style="max-width:680px;color:#444;margin-bottom: 4px;"></p>
+                    <p id="summary" style="max-width:680px;color:#444;margin-bottom: 4px;"></p>
+                    <p id="tips" style="max-width:680px;color:#444 ;margin-bottom: 4px;"></p>
+                    <button id="dirBtn" class="btn btn-primary"><i class="fas fa-directions"></i> Directions</button>
+                  </div>
+                </div>
+
+                <!-- Map + VR -->
+                <div style="display:flex;gap:16px;flex-wrap:wrap;margin:16px 0;">
+                  <div style="flex:1;min-width:300px;position:relative;">
+                    <div id="map"></div>
+                    <button id="toggleVR" class="btn btn-primary" style="position:absolute;top:10px;right:10px;z-index:1000;">Switch to VR</button>
+                  </div>
+                  <div id="streetView" style="flex:1;min-width:300px;height:500px;border-radius:12px;display:none;"></div>
+                </div>
+                <div class="tabs" id="tabs">
+                  <div class="tab active" data-tab="weather">Weather</div>
+                  <div class="tab" data-tab="transport">Transport</div>
+                  <div class="tab" data-tab="culture">Culture & Events / Tour</div>
+                  <div class="tab" data-tab="locals">Meet a Local</div>
+                  <div class="tab" data-tab="reviews">Reviews</div>
+                  <div class="tab" data-tab="plan">Plan</div>
+                </div>
+
+                <!-- Panels -->
+                <div id="weather" class="panel active">
+                  <div id="weatherNow">Weather now will show here...</div>
+                  <div id="forecast" style="margin-top:10px;">Forecast will show here...</div>
+                </div>
+
+                <div id="transport" class="panel">
+                  <div class="list" id="transportList">
+                  </div>
+                </div>
+
+                <div id="culture" class="panel">
+                  <h4>Photos and Videos</h4>
+                  <div class="culture">
+                    <div class="list" id="cultureList">
+                    </div>
+                    <div class="list" id="eventsList">
+                    </div>
+                  </div>
+                </div>
+
+                <div id="locals" class="panel">
+                  <div class="list" id="localsList"></div>
+                </div>
+
+
+                <div id="reviews" class="panel">
+                  <form id="reviewForm" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px;">
+                    <input id="revName" type="text" placeholder="Your name" style="flex:1;min-width:160px;">
+                    <input id="revRating" type="number" min="1" max="5" placeholder="Rating (1-5)" style="width:120px;"> 
+                    <input id="revText" type="text" placeholder="Short review" style="flex:2;min-width:220px;">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                  </form>
+                  <div class="list" id="reviewsList"></div>
+                </div>
+
+                <div id="plan" class="panel">
+                  <p>Create a plan: choose a day/time and preview weather.</p>
+                  <input id="planDate" type="date">
+                  <input id="planTime" type="time">
+                  <button id="planBtn" class="btn btn-primary">Preview Weather</button>
+                  <div id="planOut" style="margin-top:10px;"></div>
+                </div>
+
+        </div>
+  </div>
+</div>
+
+<!-- Google Maps API for Street View -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEqvxFgr77D9KGCImTZKkHLHf5lWKUuyE"></script>
+<script src="profile_side_bar.js"></script>
+<script src="location.js"></script>
+
+
+</body>
+</html>
+
+
+
