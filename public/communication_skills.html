@@ -59,6 +59,16 @@
             <div class="dashboard_content">
                 <div class="welcome_message">
                     <h2>Welcome back, <span id="userDisplayName">Guest</span>!</h2>
+                    <div>
+                        <label for="languageSelect"><strong>Select Language:</strong></label>
+                        <select id="languageSelect" name="language">
+                            <option value="English">English</option>
+                            <option value="Setswana">Setswana</option>
+                            <option value="IsiZulu">IsiZulu</option>
+                            <option value="Xhosa">Xhosa</option>
+                            <option value="Afrikaans">Afrikaans</option>
+                        </select>
+                    </div>
                 </div>
                 
             <div class="wrapper">
@@ -75,6 +85,7 @@
                         <span class="pill"><i class="far fa-clock"></i> ~ 3–4 hours total</span>
                         </div>
                     </div>
+                    
                     <div class="head_actions">
                         <button class="btn secondary" id="btnReset"><i class="fas fa-redo"></i> Reset Progress</button>
                         <button class="btn primary" id="btnSave"><i class="fas fa-save"></i> Save Progress</button>

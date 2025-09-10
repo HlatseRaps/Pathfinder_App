@@ -26,6 +26,11 @@ const chapters = [
           "Communication is a skill you can train daily.",
           "Attitude + clarity + follow-through beat fancy words.",
           "You are the experience, not just the information."
+        ],
+        external_link :[
+          {
+            a:"//youtu.be/LI57EB_T38c?si=MATA5Xn_ol3Nawf4"
+          }
         ]
       },
       {
@@ -373,6 +378,43 @@ const chapters = [
           ul.appendChild(li);
         });
         t.appendChild(ul);
+
+        // Embed YouTube video if external_link exists and is a YouTube link
+        if (ch.external_link && ch.external_link.length > 0) {
+          const link = ch.external_link[0].a;
+          // Only embed for YouTube links
+          if (link.includes("youtube.com") || link.includes("youtu.be")) {
+            // Convert to embed URL
+            let embedUrl = link;
+            if (link.includes("youtu.be/")) {
+              const videoId = link.split("youtu.be/")[1].split("?")[0];
+              embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            } else if (link.includes("watch?v=")) {
+              const videoId = link.split("watch?v=")[1].split("&")[0];
+              embedUrl = `https://www.youtube.com/embed/${videoId}`;
+            }
+            // Add spacing before the video
+            const spacer = document.createElement("div");
+            spacer.style.height = "20px";
+            t.appendChild(spacer);
+
+            const iframe = document.createElement("iframe");
+            iframe.width = "100%";
+            iframe.height = "315";
+            iframe.src = embedUrl;
+            iframe.title = "YouTube video";
+            iframe.frameBorder = "0";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+            iframe.allowFullscreen = true;
+            // Add styling for rounded corners and shadow
+            iframe.style.borderRadius = "16px";
+            iframe.style.boxShadow = "0 2px 16px rgba(0,0,0,0.08)";
+            iframe.style.display = "block";
+            iframe.style.margin = "0 auto";
+            t.appendChild(iframe);
+          }
+        }
+
         chapterContentEl.appendChild(t);
       }
 

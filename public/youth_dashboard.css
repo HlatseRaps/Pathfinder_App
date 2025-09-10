@@ -126,6 +126,21 @@ body, html {
     margin: 20px;
 }
 
+.welcome_message{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome_message div select{
+  font-size: 15px;
+}
+
+.welcome_message div select option{
+  margin-top: 50%;
+}
+
 /* Welcome Message */
 .welcome_message h2 { font-size: 28px; text-align: left; color: orangered; margin-bottom: 10px; }
 .welcome_message p { font-size: 16px; color: #555; }
@@ -1152,5 +1167,30 @@ label#analyzeCVBtn.cv_button:focus {
     outline: none;
 }
 
+/* Orange label for language select */
+label[for="languageSelect"] {
+    color: orangered;
+    font-weight: bold;
+    font-size: 1.05rem;
+}
 
-    
+/* Orange border, rounded corners, and reduced height for select */
+#languageSelect {
+    border: 2px solid orangered;
+    border-radius: 8px;
+    padding: 3px 10px;         /* Reduced vertical padding */
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    height: 32px;              /* Explicitly set a smaller height */
+    outline: none;
+    transition: border 0.2s;
+}
+
+/* Use main UI font for options */
+#languageSelect option {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    color: #ff5722;
+}
+
+
