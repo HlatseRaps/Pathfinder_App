@@ -342,6 +342,7 @@ body {
 
 /* Responsive */
 @media(max-width: 768px){
+    .welcome_message h2{ font-size: 20px}
     .main-profile { flex-direction: column; align-items: center; text-align:center; }
     .profile-handles h2 { font-size: 22px; }
     .profile-handles p { font-size: 14px; }
