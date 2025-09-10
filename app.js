@@ -223,7 +223,7 @@ ${jobsText}
       return;
     }
 
-    // ✅ Normal AI reply (with CV context if available)
+    //Normal AI reply (with CV context if available)
     let cvContext = "";
     if (req.session.cvText) {
       cvContext = `\n\nThe user has uploaded this CV. Use it as context when answering:\n${req.session.cvText.slice(0, 3000)}`;
